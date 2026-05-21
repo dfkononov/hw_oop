@@ -51,7 +51,6 @@ class Student:
         """
         from lecturer import Lecturer
 
-        # Объединяем условия для лучшей читаемости
         is_valid_lecturer = isinstance(lecturer, Lecturer)
         is_valid_course = (course in lecturer.courses_attached and
                            course in self.courses_in_progress)
@@ -100,7 +99,6 @@ class Student:
         """
         avg_grade = self.get_avg_grade()
 
-        # Преобразуем списки курсов в строки через запятую
         courses_in_progress_str = ', '.join(self.courses_in_progress)
         finished_courses_str = ', '.join(self.finished_courses)
 
@@ -109,3 +107,34 @@ class Student:
                 f"Средняя оценка за домашние задания: {avg_grade:.1f}\n"
                 f"Курсы в процессе изучения: {courses_in_progress_str}\n"
                 f"Завершенные курсы: {finished_courses_str}")
+
+    def __gt__(self, other_student):
+        """
+        Сравнивает текущего студента с другим по средней оценке.
+        Позволяет использовать оператор >
+        """
+        if not isinstance(other_student, Student):
+            return 'Ошибка Сравниваемый объект - не студент'
+
+            # Сравниваем средние оценки
+        return self.get_avg_grade() > other_student.get_avg_grade()
+
+    def __lt__(self, other_student):
+        """
+        Сравнивает текущего студента с другим по средней оценке.
+        Позволяет использовать оператор <
+        """
+        if not isinstance(other_student, Student):
+            return 'Ошибка Сравниваемый объект - не студент'
+
+        return self.get_avg_grade() < other_student.get_avg_grade()
+
+    def __eq__(self, other_student):
+        """
+        Проверяет, равны ли средние оценки двух студентов.
+        Позволяет использовать оператор ==
+        """
+        if not isinstance(other_student, Student):
+            return 'Ошибка Сравниваемый объект - не студент'
+
+        return self.get_avg_grade() == other_student.get_avg_grade()

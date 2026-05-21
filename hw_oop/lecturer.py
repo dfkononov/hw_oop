@@ -46,3 +46,30 @@ class Lecturer(Mentor):
         """
         avg_grade = self.get_avg_grade()
         return f"Имя: {self.name}\nФамилия: {self.surname}\nСредняя оценка за лекции: {avg_grade:.1f}"
+
+    def __gt__(self, other):
+        """
+        Сравнивает текущего лектора с другим по средней оценке за лекции.
+        Позволяет использовать оператор '>' (больше).
+        """
+        if not isinstance(other, Lecturer):
+            return 'Ошибка Сравниваемый объект - не лектор'
+        return self.get_avg_grade() > other.get_avg_grade()
+
+    def __lt__(self, other):
+        """
+        Сравнивает текущего лектора с другим по средней оценке за лекции.
+        Позволяет использовать оператор '<' (меньше).
+        """
+        if not isinstance(other, Lecturer):
+            return 'Ошибка Сравниваемый объект - не студент'
+        return self.get_avg_grade() < other.get_avg_grade()
+
+    def __eq__(self, other):
+        """
+        Проверяет, равны ли средние оценки двух лекторов.
+        Позволяет использовать оператор '==' (равно).
+        """
+        if not isinstance(other, Lecturer):
+            return 'Ошибка Сравниваемый объект - не студент'
+        return self.get_avg_grade() == other.get_avg_grade()

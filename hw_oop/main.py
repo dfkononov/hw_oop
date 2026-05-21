@@ -95,11 +95,60 @@ print(f"Средняя оценка студентов по Python: {python_stud
 python_lecturers_avg = avg_grade_all_lecturers(all_lecturers, 'Python')
 print(f"Средняя оценка лекторов по Python: {python_lecturers_avg:.1f}")
 
-# --- ТВОИ БЛОКИ ДЛЯ ПРОВЕРКИ (Задание №1 и №2) ---
-# Я добавил их в самый конец, чтобы они не мешали основному сценарию,
-# но ты можешь разместить их где угодно.
-
 print("\n" + "=" * 20 + " ПРОВЕРКА ЗАДАНИЯ №1 И №2 " + "=" * 20)
+
+# Средняя оценка студентов
+print(f"Средняя оценка {student_1.name}: {student_1.get_avg_grade():.1f}")
+print(f"Средняя оценка {student_2.name}: {student_2.get_avg_grade():.1f}")
+
+print("\n--- Результаты сравнения ---")
+
+# Сравнение 1: Проверка оператора "больше" для студентов
+if student_1 > student_2:
+    print(f"{student_1.name} {student_1.surname} учится лучше, чем {student_2.name} {student_2.surname}")
+elif student_2 > student_1:
+    print(f"{student_2.name} {student_2.surname} учится лучше, чем {student_1.name} {student_1.surname}")
+else:
+    print("У студентов одинаковые средние оценки")
+
+# Сравнение 2: Проверка оператора "меньше" для студентов
+if student_1 < student_2:
+    print(f"Проверка 'меньше' работает: Оценка {student_1.name} меньше, чем у {student_2.name}")
+
+# Сравнение 3: Проверка на равенство для студентов
+if student_1 == student_2:
+    print(f"Проверка на равенство: У студентов одинаковые успехи")
+else:
+    print("Проверка на равенство: Успехи студентов различаются")
+
+# Средняя оценка лекторов
+
+print(f"Средняя оценка {lecturer_1.name}: {lecturer_1.get_avg_grade():.1f}")
+print(f"Средняя оценка {lecturer_2.name}: {lecturer_2.get_avg_grade():.1f}")
+
+print("\n--- Результаты сравнения (с использованием операторов) ---")
+
+# Сравнение 1: Проверка оператора 'больше' для лекторов
+if lecturer_1 > lecturer_2:
+    print(f"Оператор '>' работает: {lecturer_1.name} {lecturer_1.surname} имеет оценку выше, чем {lecturer_2.name} {lecturer_2.surname}")
+else:
+    print(f"Оператор '>' работает: {lecturer_2.name} {lecturer_2.surname} имеет оценку не ниже, чем у {lecturer_1.name} {lecturer_1.surname}")
+
+# Сравнение 2: Проверка оператора 'меньше' (<) для лекторов
+if lecturer_2 < lecturer_1:
+    print(f"Оператор '<' работает: Оценка {lecturer_2.name} ниже, чем у {lecturer_1.name}")
+
+# Сравнение 3: Проверка оператора 'равно' (==) для лекторов
+# Для наглядности создадим лектора с такой же оценкой, как у второго
+print("\n--- Проверка на равенство ---")
+lecturer_3 = Lecturer('Пётр', 'Сидоров')
+# Копируем оценки от лектора 2, чтобы они были равны
+lecturer_3.grades = lecturer_2.grades.copy()
+
+if lecturer_2 == lecturer_3:
+    print(f"Оператор '==' работает: У {lecturer_2.name} и {lecturer_3.name} одинаковые средние оценки")
+else:
+    print("Ошибка: Оператор '==' работает некорректно")
 
 # Проверки задания №1 (Наследование)
 print("\n--- Проверка Задания №1 ---")
