@@ -1,0 +1,10 @@
+private/
+.idea/
+# PyCharm
+*.iml
+*.iws
+*.ipr
+
+# Python
+__pycache__/
+*.pyc
