@@ -19,11 +19,11 @@
     В консоль будет выведена информация о проверке заданий,
     а также результаты "полевых испытаний" (средние оценки).
 """
-from student import Student
-from mentor import Mentor
-from lecturer import Lecturer
-from reviewer import Reviewer
-from utils import avg_grade_all_students, avg_grade_all_lecturers
+from src.student import Student
+from src.mentor import Mentor
+from src.lecturer import Lecturer
+from src.reviewer import Reviewer
+from src.utils import avg_grade_all_students, avg_grade_all_lecturers
 
 # --- Блок для Задания 4: Полевые испытания ---
 # Создаем по 2 экземпляра каждого класса с именами из примеров

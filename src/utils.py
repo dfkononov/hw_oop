@@ -1,5 +1,5 @@
-from lecturer import Lecturer
-from student import Student
+from src.lecturer import Lecturer
+from src.student import Student
 
 def avg_grade_all_lecturers(lecturers_list, course):
     """

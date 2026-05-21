@@ -1,5 +1,5 @@
-from mentor import Mentor
-from student import Student
+from src.mentor import Mentor
+from src.student import Student
 
 class Reviewer(Mentor):
     """

@@ -49,7 +49,7 @@ class Student:
             str: Возвращает 'Ошибка', если условия не выполнены.
             None: Возвращает None, если оценка успешно выставлена.
         """
-        from lecturer import Lecturer
+        from src.lecturer import Lecturer
 
         is_valid_lecturer = isinstance(lecturer, Lecturer)
         is_valid_course = (course in lecturer.courses_attached and

@@ -1,4 +1,4 @@
-from mentor import Mentor
+from src.mentor import Mentor
 
 
 class Lecturer(Mentor):
